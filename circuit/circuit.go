@@ -833,6 +833,7 @@ func (t *Ticker) setup(c *regionCircuit, pos cube.Pos, block uint32, load bool) 
 		if comp := c.sys.Create(p, redstone.KindConsumer, redstone.Down); comp != nil {
 			comp.SetStrength(onOff(bitState(states, stateTriggered)))
 			comp.SetAllowUp(true)
+			comp.SetSideInput(true)
 		}
 	case kindPiston:
 		if comp := c.sys.Create(p, redstone.KindConsumer, redstone.Down); comp != nil {
